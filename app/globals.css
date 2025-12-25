@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +23,62 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* globals.css */
+
+:root {
+  /* Primary colors */
+  --color-primary: #32b571;
+  --color-primary-dark: #353148; /* darker shade for hover or text */
+  --color-secondary: #8e8a9c;
+  
+  /* Background / Surface colors */
+  --color-bg-light: #f8f6fc;
+  --color-bg-medium: #e4e0ec;
+  --color-bg-dark: #cccad2;
+
+  /* Text colors */
+  --text-primary: #353148;
+  --text-secondary: #8e8a9c;
+  --text-muted: #cccad2;
+
+  /* Buttons */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: var(--color-secondary);
+  --btn-secondary-text: #ffffff;
+
+  /* Border & shadows */
+  --border-color: var(--color-bg-medium);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Utility classes (optional) */
+.bg-primary { background-color: var(--color-primary); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.btn-secondary:hover {
+  background-color: #7c4de0; /* slightly darker */
 }
