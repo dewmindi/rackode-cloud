@@ -1,8 +1,10 @@
+"use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useCart } from '../context/CartContext';
-import { Section, Card, Button } from '../components/UI';
+
 import { Lock, CreditCard } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
+import { Button, Card } from '@/components/UI';
 
 const Checkout: React.FC = () => {
   const { cartTotal, cartItems, clearCart } = useCart();
