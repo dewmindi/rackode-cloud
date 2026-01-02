@@ -46,7 +46,8 @@ const Configure: React.FC = () => {
 
   // Calculate Totals
   const calculateTotal = () => {
-    let base = billingCycle === 'monthly' ? plan.priceMonthly : plan.priceMonthly * 12 * 0.90; // 10% discount yearly
+    let base = billingCycle === 'monthly' ? plan.priceMonthly : plan.priceMonthly * 12; // 10% discount yearly
+    // let base = billingCycle === 'monthly' ? plan.priceMonthly : plan.priceMonthly * 12 * 0.90; // 10% discount yearly
     
     // Addons
     const osPrice = getOption(OS_OPTIONS, selectedOS)?.priceMonthly || 0;
@@ -76,7 +77,8 @@ const Configure: React.FC = () => {
       planId: plan.id,
       planName: plan.name,
       billingCycle,
-      basePrice: billingCycle === 'monthly' ? plan.priceMonthly : plan.priceMonthly * 12 * 0.90,
+      // basePrice: billingCycle === 'monthly' ? plan.priceMonthly : plan.priceMonthly * 12 * 0.90,
+      basePrice: billingCycle === 'monthly' ? plan.priceMonthly : plan.priceMonthly * 12,
       config: {
         hostname,
         extraIp: selectedIP,
@@ -126,7 +128,7 @@ const Configure: React.FC = () => {
                    </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-slate-900">${plan.priceMonthly.toFixed(2)}</div>
+                  <div className="text-2xl font-bold text-slate-900">LKR {plan.priceMonthly.toFixed(2)}</div>
                   <div className="text-xs text-slate-500">Monthly</div>
                 </div>
               </div>
@@ -144,7 +146,7 @@ const Configure: React.FC = () => {
                     <span className="font-medium text-slate-900">Monthly</span>
                     {billingCycle === 'monthly' && <div className="w-4 h-4 rounded-full bg-primary-600 flex items-center justify-center"><Check size={10} className="text-white"/></div>}
                   </div>
-                  <div className="text-sm text-slate-500 mt-1">${plan.priceMonthly.toFixed(2)} USD</div>
+                  <div className="text-sm text-slate-500 mt-1">{plan.priceMonthly.toFixed(2)} LKR</div>
                 </div>
                 <div 
                   onClick={() => setBillingCycle('yearly')}
@@ -155,8 +157,9 @@ const Configure: React.FC = () => {
                     {billingCycle === 'yearly' && <div className="w-4 h-4 rounded-full bg-primary-600 flex items-center justify-center"><Check size={10} className="text-white"/></div>}
                   </div>
                   <div className="flex items-center gap-2 mt-1">
-                     <span className="text-sm text-slate-500">${(plan.priceMonthly * 12 * 0.90).toFixed(2)} USD</span>
-                     <Badge color="green">Save 10%</Badge>
+                     <span className="text-sm text-slate-500">{(plan.priceMonthly * 12).toFixed(2)} LKR</span>
+                     {/* <span className="text-sm text-slate-500">${(plan.priceMonthly * 12 * 0.90).toFixed(2)} LKR</span> */}
+                     {/* <Badge color="green">Save 10%</Badge> */}
                   </div>
                 </div>
               </div>
@@ -247,15 +250,15 @@ const Configure: React.FC = () => {
                 <div className="border-t border-slate-200 pt-4 mb-6">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-slate-600 text-sm">Setup Fees:</span>
-                    <span className="text-slate-900 font-mono">$0.00 USD</span>
+                    <span className="text-slate-900 font-mono">LKR 0.00 </span>
                   </div>
                    <div className="flex justify-between items-center mb-2">
                     <span className="text-slate-600 text-sm">{billingCycle === 'monthly' ? 'Monthly' : 'Annually'}:</span>
-                    <span className="text-slate-900 font-mono">${totalDue.toFixed(2)} USD</span>
+                    <span className="text-slate-900 font-mono">{totalDue.toFixed(2)} LKR</span>
                   </div>
                   <div className="flex justify-between items-center mt-4 pt-4 border-t border-slate-100">
                     <span className="text-lg font-bold text-slate-900">Total Due Today</span>
-                    <span className="text-2xl font-bold text-primary-600">${totalDue.toFixed(2)}</span>
+                    <span className="text-2xl font-bold text-primary-600">{totalDue.toFixed(2)}</span>
                   </div>
                 </div>
 
@@ -320,7 +323,8 @@ const SummaryLine: React.FC<{ label: string; option: any; billingCycle: 'monthly
   return (
     <div className="flex justify-between text-xs">
       <span className="text-slate-500">» {label}: {option.name}</span>
-      <span className="text-slate-700 font-mono">{price > 0 ? `$${price.toFixed(2)}` : '$0.00'}</span>
+       <span className="text-slate-700 font-mono">{price > 0 ? `LKR ${price.toFixed(2)}` : 'LKR 0.00'}</span>
+      {/* <span className="text-slate-700 font-mono">{price > 0 ? `$${price.toFixed(2)}` : '$0.00'}</span> */}
     </div>
   );
 };
