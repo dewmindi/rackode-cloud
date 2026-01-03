@@ -28,7 +28,7 @@ const PricingCard: React.FC<{ plan: any }> = ({ plan }) => (
         <span className="text-3xl font-bold text-slate-900">LKR{plan.priceMonthly}</span>
         <span className="text-slate-500 text-sm">/mo</span>
       </div>
-      <p className="text-xs text-slate-400 mt-1">Billed monthly</p>
+      <p className="text-xs text-slate-400 mt-1">Billed Anually</p>
     </div>
 
     <div className="space-y-4 mb-8 flex-grow">

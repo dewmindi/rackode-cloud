@@ -50,7 +50,7 @@ const Plans: React.FC = () => {
                     <div className="flex flex-col gap-1">
                       <span className="text-lg font-bold text-slate-900">{plan.name}</span>
                       <span className="text-2xl font-bold text-primary-600">
-                        ${billingCycle === 'monthly' ? plan.priceMonthly : (plan.priceMonthly * 0.9).toFixed(2)}
+                        LKR {billingCycle === 'monthly' ? plan.priceMonthly : (plan.priceMonthly * 0.9).toFixed(2)}
                         <span className="text-sm text-slate-400 font-normal">/mo</span>
                       </span>
                     </div>
