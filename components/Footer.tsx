@@ -43,6 +43,16 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
+            <h4 className="font-semibold text-slate-900 mb-4">Contact Us</h4>
+            <ul className="space-y-2 text-sm text-slate-600">
+              <li><Link href="tel:0767931405" className="hover:text-primary-600 transition-colors">0767931405</Link></li>
+              <li><Link href="https://wa.me/+94767931405" target="_blank" className="hover:text-primary-600 transition-colors">Whatsapp</Link></li>
+              {/* <li><Link href="#" className="hover:text-primary-600 transition-colors"></Link></li>
+              <li><Link href="#" className="hover:text-primary-600 transition-colors"></Link></li> */}
+            </ul>
+          </div>
+
+          <div>
             <h4 className="font-semibold text-slate-900 mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-slate-600">
               <li><Link href="/about" className="hover:text-primary-600 transition-colors">About Us</Link></li>
