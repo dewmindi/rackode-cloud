@@ -9,7 +9,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'VPS Plans', path: '/plans' },
   { label: 'Custom Build', path: '/plans' },
   { label: 'Contact', path: '/contact' },
-  { label: 'Client Portal', path: '#portal', isButton: true },
+  { label: 'Dashboard', path: '/dashboard', isButton: true },
 ];
 
 export const VPS_PLANS: VPSPlan[] = [

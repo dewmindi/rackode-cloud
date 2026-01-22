@@ -28,30 +28,30 @@ body {
 /* globals.css */
 
 :root {
-  /* Primary colors */
-  --color-primary: #32b571;
-  --color-primary-dark: #353148; /* darker shade for hover or text */
-  --color-secondary: #8e8a9c;
+  /* Primary colors - Light Blue & Black Theme */
+  --color-primary: #60a5fa; /* Light blue */
+  --color-primary-dark: #2563eb; /* Darker blue for hover */
+  --color-secondary: #3b82f6; /* Medium blue */
   
   /* Background / Surface colors */
-  --color-bg-light: #f8f6fc;
-  --color-bg-medium: #e4e0ec;
-  --color-bg-dark: #cccad2;
+  --color-bg-light: #f8fafc;
+  --color-bg-medium: #e2e8f0;
+  --color-bg-dark: #0a0a0a;
 
   /* Text colors */
-  --text-primary: #353148;
-  --text-secondary: #8e8a9c;
-  --text-muted: #cccad2;
+  --text-primary: #0a0a0a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
 
   /* Buttons */
   --btn-primary-bg: var(--color-primary);
   --btn-primary-text: #ffffff;
-  --btn-secondary-bg: var(--color-secondary);
+  --btn-secondary-bg: #0a0a0a;
   --btn-secondary-text: #ffffff;
 
   /* Border & shadows */
   --border-color: var(--color-bg-medium);
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(59, 130, 246, 0.15);
 }
 
 /* Utility classes (optional) */
@@ -80,5 +80,11 @@ body {
   transition: background-color 0.2s;
 }
 .btn-secondary:hover {
-  background-color: #7c4de0; /* slightly darker */
+  background-color: #1f1f1f; /* slightly lighter black */
+}
+
+/* Body styling */
+body {
+  background-color: #ffffff;
+  color: var(--text-primary);
 }

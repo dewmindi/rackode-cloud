@@ -31,16 +31,16 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled || isMobileOpen ? 'bg-white/90 backdrop-blur-md border-slate-200 py-3 shadow-sm' : 'bg-transparent border-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled || isMobileOpen ? 'bg-white/90 backdrop-blur-md border-gray-200 py-3 shadow-sm' : 'bg-transparent border-transparent py-5'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white group-hover:bg-primary-700 transition-colors">
+            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white group-hover:bg-blue-600 transition-colors">
               <Server size={18} strokeWidth={2.5} />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">{APP_NAME}</span>
+            <span className="text-xl font-bold tracking-tight text-black">{APP_NAME}</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.path}
                   href={link.path}
-                  className={`text-sm font-medium transition-colors hover:text-primary-600 ${pathname === link.path ? 'text-primary-600' : 'text-slate-600'
+                  className={`text-sm font-medium transition-colors hover:text-blue-500 ${pathname === link.path ? 'text-blue-500' : 'text-gray-700'
                     }`}
                 >
                   {link.label}
@@ -63,10 +63,10 @@ const Navbar: React.FC = () => {
             ))}
 
             {/* Cart Icon */}
-            <Link href="/cart" className="relative text-slate-600 hover:text-primary-600 transition-colors">
+            <Link href="/cart" className="relative text-gray-700 hover:text-blue-500 transition-colors">
               <ShoppingCart size={20} />
               {cartItems.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary-600 text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full">
+                <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full">
                   {cartItems.length}
                 </span>
               )}
@@ -75,16 +75,16 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Toggle */}
           <div className="flex items-center gap-4 md:hidden">
-            <Link href="/cart" className="relative text-slate-600">
+            <Link href="/cart" className="relative text-gray-700">
               <ShoppingCart size={20} />
               {cartItems.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary-600 text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full">
+                <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full">
                   {cartItems.length}
                 </span>
               )}
             </Link>
             <button
-              className="p-2 text-slate-600"
+              className="p-2 text-gray-700"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
             >
               {isMobileOpen ? <X /> : <Menu />}
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
+            className="md:hidden bg-white border-b border-gray-200 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-4 flex flex-col">
               {NAV_LINKS.map((link) => (
@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
                   <Link
                     key={link.path}
                     href={link.path}
-                    className="text-base font-medium text-slate-700 py-2 block border-b border-slate-50"
+                    className="text-base font-medium text-gray-800 py-2 block border-b border-gray-100"
                   >
                     {link.label}
                   </Link>

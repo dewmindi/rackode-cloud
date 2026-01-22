@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rackode-cloud-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for live reload
+      - .:/app
+      # Prevent node_modules from being overwritten
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+      - HOSTNAME=0.0.0.0
+      # SolusVM v1 Client API (Limited)
+      - SOLUSVM_API_URL=${SOLUSVM_API_URL}
+      - SOLUSVM_API_KEY=${SOLUSVM_API_KEY}
+      - SOLUSVM_API_HASH=${SOLUSVM_API_HASH}
+      # SolusVM v2 API (Full Functionality)
+      - SOLUSVM_V2_API_URL=${SOLUSVM_V2_API_URL}
+      - SOLUSVM_V2_API_TOKEN=${SOLUSVM_V2_API_TOKEN}
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    command: npm run dev -- -H 0.0.0.0

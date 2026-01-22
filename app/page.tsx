@@ -15,38 +15,38 @@ gsap.registerPlugin(ScrollTrigger);
 const PricingCard: React.FC<{ plan: any }> = ({ plan }) => (
   <Card className="h-full flex flex-col relative overflow-hidden" hoverEffect={true}>
     {plan.highlight && (
-      <div className="absolute top-0 inset-x-0 h-1 bg-primary-600"></div>
+      <div className="absolute top-0 inset-x-0 h-1 bg-blue-500"></div>
     )}
     <div className="mb-6">
       <div className="flex justify-between items-start mb-2">
-        <h3 className="font-semibold text-lg text-slate-900">{plan.name}</h3>
+        <h3 className="font-semibold text-lg text-black">{plan.name}</h3>
         {plan.highlight && (
-          <Badge color="green">Best Value</Badge>
+          <Badge color="blue">Best Value</Badge>
         )}
       </div>
       <div className="flex items-baseline gap-1">
-        <span className="text-3xl font-bold text-slate-900">LKR{plan.priceMonthly}</span>
-        <span className="text-slate-500 text-sm">/mo</span>
+        <span className="text-3xl font-bold text-black">LKR{plan.priceMonthly}</span>
+        <span className="text-gray-500 text-sm">/mo</span>
       </div>
-      <p className="text-xs text-slate-400 mt-1">Billed Anually</p>
+      <p className="text-xs text-gray-400 mt-1">Billed Anually</p>
     </div>
 
     <div className="space-y-4 mb-8 flex-grow">
-      <div className="flex justify-between py-2 border-b border-slate-50">
-        <span className="text-slate-500 text-sm">vCPU Core</span>
-        <span className="font-mono font-medium text-slate-700">{plan.vcpu} Core</span>
+      <div className="flex justify-between py-2 border-b border-gray-100">
+        <span className="text-gray-600 text-sm">vCPU Core</span>
+        <span className="font-mono font-medium text-black">{plan.vcpu} Core</span>
       </div>
-      <div className="flex justify-between py-2 border-b border-slate-50">
-        <span className="text-slate-500 text-sm">Memory</span>
-        <span className="font-mono font-medium text-slate-700">{plan.ramGB} GB</span>
+      <div className="flex justify-between py-2 border-b border-gray-100">
+        <span className="text-gray-600 text-sm">Memory</span>
+        <span className="font-mono font-medium text-black">{plan.ramGB} GB</span>
       </div>
-      <div className="flex justify-between py-2 border-b border-slate-50">
-        <span className="text-slate-500 text-sm">Storage</span>
-        <span className="font-mono font-medium text-slate-700">{plan.storageGB} GB {plan.storageType}</span>
+      <div className="flex justify-between py-2 border-b border-gray-100">
+        <span className="text-gray-600 text-sm">Storage</span>
+        <span className="font-mono font-medium text-black">{plan.storageGB} GB {plan.storageType}</span>
       </div>
-      <div className="flex justify-between py-2 border-b border-slate-50">
-        <span className="text-slate-500 text-sm">Bandwidth</span>
-        <span className="font-mono font-medium text-slate-700">{plan.bandwidthTB} TB</span>
+      <div className="flex justify-between py-2 border-b border-gray-100">
+        <span className="text-gray-600 text-sm">Bandwidth</span>
+        <span className="font-mono font-medium text-black">{plan.bandwidthTB} TB</span>
       </div>
     </div>
 
@@ -106,12 +106,12 @@ const Home: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <Badge color="green" className="mb-6">v2.0 Infrastructure Now Live</Badge>
-            <h1 ref={headlineRef} className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
+            <Badge color="blue" className="mb-6">v2.0 Infrastructure Now Live</Badge>
+            <h1 ref={headlineRef} className="text-5xl md:text-7xl font-bold tracking-tight text-black leading-[1.1] mb-6">
               Reliable VPS Hosting. <br />
-              <span className="text-primary-600">Built for Performance.</span>
+              <span className="text-blue-500">Built for Performance.</span>
             </h1>
-            <p ref={subRef} className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mb-10">
+            <p ref={subRef} className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mb-10">
               Deploy high-frequency cloud compute instances in seconds. 
               Transparent pricing, NVMe storage, and a network built for production workloads.
             </p>
@@ -128,13 +128,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* STATS STRIP */}
-      <section className="border-y border-slate-100 bg-slate-50/50">
+      <section className="border-y border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-200/50">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-300">
             {INFRA_STATS.map((stat, idx) => (
               <div key={idx} className="py-8 px-4 text-center md:text-left">
-                <div className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">{stat.value}</div>
-                <div className="text-sm text-slate-500 font-medium uppercase tracking-wide mt-1">{stat.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-black tracking-tight">{stat.value}</div>
+                <div className="text-sm text-gray-600 font-medium uppercase tracking-wide mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -144,8 +144,8 @@ const Home: React.FC = () => {
       {/* PRICING SECTION */}
       <Section id="pricing">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 tracking-tight mb-4">Simple, Transparent Pricing</h2>
-          <p className="text-slate-600">
+          <h2 className="text-3xl font-bold text-black tracking-tight mb-4">Simple, Transparent Pricing</h2>
+          <p className="text-gray-700">
             No hidden fees, no long-term contracts. Pay for what you need with our straightforward monthly pricing.
           </p>
         </div>
@@ -157,7 +157,7 @@ const Home: React.FC = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <p className="text-slate-500 text-sm">Need a custom configuration? <Link href="/custom" className="text-primary-600 font-medium hover:underline">Build your own VPS</Link></p>
+          <p className="text-gray-600 text-sm">Need a custom configuration? <Link href="/custom" className="text-blue-500 font-medium hover:underline">Build your own VPS</Link></p>
         </div>
       </Section>
 
@@ -176,8 +176,8 @@ const Home: React.FC = () => {
       <Section background="gray">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-1">
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight mb-6">Why developers choose Rackode</h2>
-            <p className="text-slate-600 leading-relaxed mb-8">
+            <h2 className="text-3xl font-bold text-black tracking-tight mb-6">Why developers choose Rackode</h2>
+            <p className="text-gray-700 leading-relaxed mb-8">
               We focus on the hardware so you can focus on your code. Our infrastructure is designed from the ground up to minimize latency and maximize throughput.
             </p>
             <Button variant="secondary" icon>Explore Infrastructure</Button>
@@ -187,12 +187,12 @@ const Home: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {FEATURES.map((feature, idx) => (
                 <div key={idx} className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-primary-600">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
                     <feature.icon size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900 mb-2">{feature.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{feature.description}</p>
+                    <h3 className="font-semibold text-black mb-2">{feature.title}</h3>
+                    <p className="text-sm text-gray-700 leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -203,20 +203,20 @@ const Home: React.FC = () => {
 
       {/* CTA SECTION */}
       <Section>
-        <div className="bg-slate-900 rounded-2xl p-8 md:p-16 text-center md:text-left relative overflow-hidden">
+        <div className="bg-black rounded-2xl p-8 md:p-16 text-center md:text-left relative overflow-hidden">
           {/* Decorative background */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary-600/20 blur-[80px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 blur-[80px] rounded-full pointer-events-none"></div>
           
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-xl">
               <h2 className="text-3xl font-bold text-white mb-4">Ready to deploy your next project?</h2>
-              <p className="text-slate-400 text-lg">
+              <p className="text-gray-400 text-lg">
                 Get started with $100 in free credits for your first month. 
                 Experience the difference of premium hardware.
               </p>
             </div>
             <div className="flex-shrink-0">
-              <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 border-white">
+              <Button size="lg" className="bg-blue-500 text-white hover:bg-blue-600 border-blue-500">
                 Create Free Account
               </Button>
             </div>

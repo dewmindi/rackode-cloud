@@ -100,12 +100,12 @@ const Configure: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="bg-slate-50 min-h-screen pb-12"
+      className="bg-gray-50 min-h-screen pb-12"
     >
-      <div className="bg-slate-900 text-white pt-12 pb-20">
+      <div className="bg-black text-white pt-12 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold mb-2">Configure Server</h1>
-          <p className="text-slate-400">Customize your instance specs and location.</p>
+          <p className="text-gray-400">Customize your instance specs and location.</p>
         </div>
       </div>
 
@@ -116,11 +116,11 @@ const Configure: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             
             {/* 1. Plan Details Header */}
-            <Card className="border-l-4 border-l-primary-600">
+            <Card className="border-l-4 border-l-blue-500">
               <div className="flex justify-between items-start">
                 <div>
-                   <h2 className="text-xl font-bold text-slate-900">{plan.name}</h2>
-                   <div className="mt-2 grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-slate-600">
+                   <h2 className="text-xl font-bold text-black">{plan.name}</h2>
+                   <div className="mt-2 grid grid-cols-2 gap-x-8 gap-y-1 text-sm text-gray-700">
                      <span>{plan.vcpu} vCPU Core</span>
                      <span>{plan.ramGB} GB RAM</span>
                      <span>{plan.storageGB} GB {plan.storageType} Storage</span>
@@ -128,38 +128,37 @@ const Configure: React.FC = () => {
                    </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-slate-900">LKR {plan.priceMonthly.toFixed(2)}</div>
-                  <div className="text-xs text-slate-500">Monthly</div>
+                  <div className="text-2xl font-bold text-black">LKR {plan.priceMonthly.toFixed(2)}</div>
+                  <div className="text-xs text-gray-600">Monthly</div>
                 </div>
               </div>
             </Card>
 
             {/* 2. Billing Cycle */}
             <Card>
-              <h3 className="text-lg font-semibold text-slate-900 mb-4 border-b border-slate-100 pb-2">Choose Billing Cycle</h3>
+              <h3 className="text-lg font-semibold text-black mb-4 border-b border-gray-200 pb-2">Choose Billing Cycle</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div 
                   onClick={() => setBillingCycle('monthly')}
-                  className={`cursor-pointer border-2 rounded-lg p-4 transition-all ${billingCycle === 'monthly' ? 'border-primary-600 bg-primary-50' : 'border-slate-200 hover:border-slate-300'}`}
+                  className={`cursor-pointer border-2 rounded-lg p-4 transition-all ${billingCycle === 'monthly' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'}`}
                 >
                   <div className="flex justify-between items-center">
-                    <span className="font-medium text-slate-900">Monthly</span>
-                    {billingCycle === 'monthly' && <div className="w-4 h-4 rounded-full bg-primary-600 flex items-center justify-center"><Check size={10} className="text-white"/></div>}
+                    <span className="font-medium text-black">Monthly</span>
+                    {billingCycle === 'monthly' && <div className="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center"><Check size={10} className="text-white"/></div>}
                   </div>
-                  <div className="text-sm text-slate-500 mt-1">{plan.priceMonthly.toFixed(2)} LKR</div>
+                  <div className="text-sm text-gray-600 mt-1">{plan.priceMonthly.toFixed(2)} LKR</div>
                 </div>
                 <div 
                   onClick={() => setBillingCycle('yearly')}
-                  className={`cursor-pointer border-2 rounded-lg p-4 transition-all ${billingCycle === 'yearly' ? 'border-primary-600 bg-primary-50' : 'border-slate-200 hover:border-slate-300'}`}
+                  className={`cursor-pointer border-2 rounded-lg p-4 transition-all ${billingCycle === 'yearly' ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-gray-300'}`}
                 >
                   <div className="flex justify-between items-center">
-                    <span className="font-medium text-slate-900">Annually</span>
-                    {billingCycle === 'yearly' && <div className="w-4 h-4 rounded-full bg-primary-600 flex items-center justify-center"><Check size={10} className="text-white"/></div>}
+                    <span className="font-medium text-black">Annually</span>
+                    {billingCycle === 'yearly' && <div className="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center"><Check size={10} className="text-white"/></div>}
                   </div>
                   <div className="flex items-center gap-2 mt-1">
-                     <span className="text-sm text-slate-500">{(plan.priceMonthly * 12).toFixed(2)} LKR</span>
-                     {/* <span className="text-sm text-slate-500">${(plan.priceMonthly * 12 * 0.90).toFixed(2)} LKR</span> */}
-                     {/* <Badge color="green">Save 10%</Badge> */}
+                     <span className="text-sm text-gray-600">{(plan.priceMonthly * 12).toFixed(2)} LKR</span>
+                     {/* <Badge color="blue">Save 10%</Badge> */}
                   </div>
                 </div>
               </div>
@@ -167,7 +166,7 @@ const Configure: React.FC = () => {
 
             {/* 3. Configure Server */}
             <Card>
-              <h3 className="text-lg font-semibold text-slate-900 mb-4 border-b border-slate-100 pb-2">Configure Server</h3>
+              <h3 className="text-lg font-semibold text-black mb-4 border-b border-gray-200 pb-2">Configure Server</h3>
               
               <div className="mb-6">
                 <label className="block text-sm font-medium text-slate-700 mb-2">Server Label / Hostname</label>
@@ -201,7 +200,7 @@ const Configure: React.FC = () => {
 
             {/* 4. Configurable Options */}
             <Card>
-              <h3 className="text-lg font-semibold text-slate-900 mb-4 border-b border-slate-100 pb-2">Configurable Options</h3>
+              <h3 className="text-lg font-semibold text-black mb-4 border-b border-gray-200 pb-2">Configurable Options</h3>
               <div className="space-y-4">
                 <ConfigSelect 
                   label="Extra IPv4" 
@@ -232,12 +231,12 @@ const Configure: React.FC = () => {
           {/* RIGHT COLUMN: SUMMARY */}
           <div className="lg:col-span-1">
             <div className="sticky top-24">
-              <Card className="bg-white shadow-lg border-t-4 border-t-slate-900">
-                <h3 className="text-lg font-bold text-slate-900 mb-4">Order Summary</h3>
+              <Card className="bg-white shadow-lg border-t-4 border-t-black">
+                <h3 className="text-lg font-bold text-black mb-4">Order Summary</h3>
                 
                 <div className="space-y-3 mb-6">
-                  <div className="font-semibold text-slate-800">{plan.name}</div>
-                  <div className="text-sm text-slate-500 pb-4 border-b border-slate-100">{billingCycle === 'monthly' ? 'Monthly' : 'Annually'} Billing</div>
+                  <div className="font-semibold text-black">{plan.name}</div>
+                  <div className="text-sm text-gray-600 pb-4 border-b border-gray-200">{billingCycle === 'monthly' ? 'Monthly' : 'Annually'} Billing</div>
 
                   {/* Dynamic Lines */}
                   <SummaryLine label="Extra IPv4" option={getOption(IP_OPTIONS, selectedIP)} billingCycle={billingCycle} />
@@ -247,18 +246,18 @@ const Configure: React.FC = () => {
                   <SummaryLine label="Location" option={getOption(LOCATION_OPTIONS, selectedLocation)} billingCycle={billingCycle} />
                 </div>
 
-                <div className="border-t border-slate-200 pt-4 mb-6">
+                <div className="border-t border-gray-200 pt-4 mb-6">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-slate-600 text-sm">Setup Fees:</span>
-                    <span className="text-slate-900 font-mono">LKR 0.00 </span>
+                    <span className="text-gray-700 text-sm">Setup Fees:</span>
+                    <span className="text-black font-mono">LKR 0.00 </span>
                   </div>
                    <div className="flex justify-between items-center mb-2">
-                    <span className="text-slate-600 text-sm">{billingCycle === 'monthly' ? 'Monthly' : 'Annually'}:</span>
-                    <span className="text-slate-900 font-mono">{totalDue.toFixed(2)} LKR</span>
+                    <span className="text-gray-700 text-sm">{billingCycle === 'monthly' ? 'Monthly' : 'Annually'}:</span>
+                    <span className="text-black font-mono">{totalDue.toFixed(2)} LKR</span>
                   </div>
-                  <div className="flex justify-between items-center mt-4 pt-4 border-t border-slate-100">
-                    <span className="text-lg font-bold text-slate-900">Total Due Today</span>
-                    <span className="text-2xl font-bold text-primary-600">{totalDue.toFixed(2)}</span>
+                  <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-200">
+                    <span className="text-lg font-bold text-black">Total Due Today</span>
+                    <span className="text-2xl font-bold text-blue-500">{totalDue.toFixed(2)}</span>
                   </div>
                 </div>
 
@@ -268,7 +267,7 @@ const Configure: React.FC = () => {
               </Card>
               
               <div className="mt-4 text-center">
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-gray-500">
                   By continuing, you agree to our <span className="underline cursor-pointer">Terms of Service</span>.
                 </p>
               </div>
@@ -322,9 +321,8 @@ const SummaryLine: React.FC<{ label: string; option: any; billingCycle: 'monthly
   const price = billingCycle === 'monthly' ? option.priceMonthly : option.priceMonthly * 12;
   return (
     <div className="flex justify-between text-xs">
-      <span className="text-slate-500">» {label}: {option.name}</span>
-       <span className="text-slate-700 font-mono">{price > 0 ? `LKR ${price.toFixed(2)}` : 'LKR 0.00'}</span>
-      {/* <span className="text-slate-700 font-mono">{price > 0 ? `$${price.toFixed(2)}` : '$0.00'}</span> */}
+      <span className="text-gray-600">» {label}: {option.name}</span>
+       <span className="text-black font-mono">{price > 0 ? `LKR ${price.toFixed(2)}` : 'LKR 0.00'}</span>
     </div>
   );
 };
