@@ -45,38 +45,38 @@ const Cart: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
+
           <div className="lg:col-span-2 space-y-4">
             {cartItems.map((item) => (
               <Card key={item.id} className="relative group overflow-hidden border-l-4 border-l-blue-500">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
                   <div className="flex items-start gap-4">
-                     <div className="p-3 bg-blue-50 rounded-lg text-blue-600 hidden sm:block">
-                       <Server size={24} />
-                     </div>
-                     <div>
-                       <h3 className="text-lg font-bold text-black">{item.planName}</h3>
-                       <div className="text-sm font-mono text-gray-600 mb-2">{item.config.hostname}</div>
-                       
-                       <div className="text-sm text-gray-700 space-y-1">
-                         <div className="flex items-center gap-2">
-                           <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                           {getName(OS_OPTIONS, item.config.os)}
-                         </div>
-                          <div className="flex items-center gap-2">
-                           <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                           {getName(LOCATION_OPTIONS, item.config.location)}
-                         </div>
-                       </div>
-                     </div>
+                    <div className="p-3 bg-blue-50 rounded-lg text-blue-600 hidden sm:block">
+                      <Server size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-black">{item.planName}</h3>
+                      <div className="text-sm font-mono text-gray-600 mb-2">{item.config.hostname}</div>
+
+                      <div className="text-sm text-gray-700 space-y-1">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                          {getName(OS_OPTIONS, item.config.os)}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                          {getName(LOCATION_OPTIONS, item.config.location)}
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="flex flex-row sm:flex-col justify-between items-center sm:items-end gap-4 mt-4 sm:mt-0">
                     <div className="text-right">
-                       <div className="text-xl font-bold text-black">${item.totalPrice.toFixed(2)}</div>
-                       <div className="text-xs text-gray-600 uppercase">{item.billingCycle}</div>
+                      <div className="text-xl font-bold text-black">${item.totalPrice.toFixed(2)}</div>
+                      <div className="text-xs text-gray-600 uppercase">{item.billingCycle}</div>
                     </div>
-                    <button 
+                    <button
                       onClick={() => removeFromCart(item.id)}
                       className="text-red-500 hover:text-red-700 hover:bg-red-50 p-2 rounded-md transition-colors flex items-center gap-1 text-sm"
                     >
@@ -88,34 +88,36 @@ const Cart: React.FC = () => {
             ))}
 
             <div className="flex justify-between items-center pt-4">
-               <Link href="/plans" className="text-blue-500 font-medium hover:underline flex items-center gap-2">
-                 <ArrowLeft size={16} /> Continue Shopping
-               </Link>
+              <Link href="/plans" className="text-blue-500 font-medium hover:underline flex items-center gap-2">
+                <ArrowLeft size={16} /> Continue Shopping
+              </Link>
             </div>
           </div>
 
           <div className="lg:col-span-1">
-             <div className="sticky top-24">
-               <Card className="shadow-lg">
-                 <h3 className="text-lg font-bold text-black mb-4">Cart Summary</h3>
-                 <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                   <span className="text-gray-700">Subtotal</span>
-                   <span className="font-mono text-black">${cartTotal.toFixed(2)}</span>
-                 </div>
-                 <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                   <span className="text-gray-700">Tax</span>
-                   <span className="font-mono text-black">$0.00</span>
-                 </div>
-                 <div className="flex justify-between items-center py-4">
-                   <span className="text-xl font-bold text-black">Total</span>
-                   <span className="text-2xl font-bold text-blue-500">${cartTotal.toFixed(2)}</span>
-                 </div>
+            <div className="sticky top-24">
+              <Card className="shadow-lg">
+                <h3 className="text-lg font-bold text-black mb-4">Cart Summary</h3>
+                <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                  <span className="text-gray-700">Subtotal</span>
+                  <span className="font-mono text-black">${cartTotal.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                  <span className="text-gray-700">Tax</span>
+                  <span className="font-mono text-black">$0.00</span>
+                </div>
+                <div className="flex justify-between items-center py-4">
+                  <span className="text-xl font-bold text-black">Total</span>
+                  <span className="text-2xl font-bold text-blue-500">${cartTotal.toFixed(2)}</span>
+                </div>
 
-                 <Link href="/checkout">
-                    <Button size="lg" className="w-full justify-center">Checkout</Button>
-                 </Link>
-               </Card>
-             </div>
+                <div className="text-center p-4 bg-gray-100 rounded-lg">
+                  <p className="text-sm text-gray-600">
+                    Checkout functionality is currently unavailable.
+                  </p>
+                </div>
+              </Card>
+            </div>
           </div>
 
         </div>
