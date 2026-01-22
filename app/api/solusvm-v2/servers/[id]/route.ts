@@ -41,10 +41,11 @@ export async function GET(
 // DELETE - Delete server
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params; 
   try {
-    const serverId = parseInt(params.id);
+    const serverId = parseInt(id); 
 
     if (isNaN(serverId)) {
       return NextResponse.json(
