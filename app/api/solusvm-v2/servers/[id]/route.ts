@@ -4,10 +4,11 @@ import { SolusVMv2Client } from '@/lib/solusvm-v2';
 // GET - Get server details
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params; 
   try {
-    const serverId = parseInt(params.id);
+    const serverId = parseInt(id); 
 
     if (isNaN(serverId)) {
       return NextResponse.json(
